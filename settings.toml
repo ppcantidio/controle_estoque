@@ -1,0 +1,21 @@
+[default]
+DEBUG = false
+EXTENSIONS = [
+    "controle_estoque.extensions.database:init_app",
+    "controle_estoque.extensions.serializer:init_app",
+    "controle_estoque.extensions.commands:init_app",
+    "controle_estoque.resources.web.blueprint:init_app",
+    "controle_estoque.resources.restapi.blueprint:init_app",
+]
+
+
+[development]
+EXTENSIONS = [
+    "dynaconf_merge_unique"  # to reuse extensions list from [default]
+]
+DEBUG = true
+SQLALCHEMY_DATABASE_URI='sqlite://database.db'
+
+
+[production]
+DEBUG = false
