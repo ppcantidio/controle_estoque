@@ -1,5 +1,4 @@
 import imp
-from controle_estoque.resources.restapi.models import product
 from controle_estoque.extensions.database import db
 
 

@@ -1,8 +1,8 @@
 from flask import jsonify
-from controle_estoque.resources.restapi.blueprint import bp
+from controle_estoque.extensions.blueprints import bp_restapi
 
 
 class Products:
-    @bp.route('/products', methods=['POST'])
+    @bp_restapi.route('/products', methods=['POST'])
     def create_product():
         pass
