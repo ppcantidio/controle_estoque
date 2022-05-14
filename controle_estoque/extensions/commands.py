@@ -1,5 +1,4 @@
-import imp
-from controle_estoque.extensions.database import db
+from controle_estoque.db.database import db
 
 
 def create_db():
@@ -7,5 +6,5 @@ def create_db():
 
 
 def init_app(app):
-    print('t')
-    app.cli.add_command(app.cli.command(create_db))
+    for command in [create_db]:
+        app.cli.add_command(app.cli.command()(command))

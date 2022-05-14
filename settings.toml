@@ -1,11 +1,14 @@
 [default]
 DEBUG = false
+STATIC_FOLDER='/resources/web/static'
+template_folder="controle_estoque/resources/web/templates"
 EXTENSIONS = [
     "controle_estoque.extensions.database:init_app",
     "controle_estoque.extensions.serializer:init_app",
     "controle_estoque.extensions.commands:init_app",
     "controle_estoque.extensions.blueprints:init_app",
 ]
+BASE_PATH_URL='api/v1'
 
 
 [development]
@@ -13,7 +16,6 @@ EXTENSIONS = [
     "dynaconf_merge_unique"  # to reuse extensions list from [default]
 ]
 DEBUG = true
-SQLALCHEMY_DATABASE_URI='sqlite://database.db'
 
 
 [production]
